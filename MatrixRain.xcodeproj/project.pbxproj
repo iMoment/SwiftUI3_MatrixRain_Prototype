@@ -11,6 +11,8 @@
 		91C74BF327B458F4009B5986 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C74BF227B458F4009B5986 /* ContentView.swift */; };
 		91C74BF527B458F5009B5986 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91C74BF427B458F5009B5986 /* Assets.xcassets */; };
 		91C74BF827B458F5009B5986 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91C74BF727B458F5009B5986 /* Preview Assets.xcassets */; };
+		91C74BFF27B45ACE009B5986 /* matrixCode.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91C74BFE27B45ACE009B5986 /* matrixCode.ttf */; };
+		91C74C0327B45B3E009B5986 /* MatrixRainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C74C0227B45B3E009B5986 /* MatrixRainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,9 @@
 		91C74BF227B458F4009B5986 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		91C74BF427B458F5009B5986 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91C74BF727B458F5009B5986 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		91C74BFE27B45ACE009B5986 /* matrixCode.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = matrixCode.ttf; sourceTree = "<group>"; };
+		91C74C0027B45AE6009B5986 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		91C74C0227B45B3E009B5986 /* MatrixRainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixRainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +40,7 @@
 		91C74BE427B458F4009B5986 = {
 			isa = PBXGroup;
 			children = (
+				91C74BFE27B45ACE009B5986 /* matrixCode.ttf */,
 				91C74BEF27B458F4009B5986 /* MatrixRain */,
 				91C74BEE27B458F4009B5986 /* Products */,
 			);
@@ -51,8 +57,10 @@
 		91C74BEF27B458F4009B5986 /* MatrixRain */ = {
 			isa = PBXGroup;
 			children = (
+				91C74C0027B45AE6009B5986 /* Info.plist */,
 				91C74BF027B458F4009B5986 /* MatrixRainApp.swift */,
 				91C74BF227B458F4009B5986 /* ContentView.swift */,
+				91C74C0127B45B27009B5986 /* Views */,
 				91C74BF427B458F5009B5986 /* Assets.xcassets */,
 				91C74BF627B458F5009B5986 /* Preview Content */,
 			);
@@ -65,6 +73,14 @@
 				91C74BF727B458F5009B5986 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		91C74C0127B45B27009B5986 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91C74C0227B45B3E009B5986 /* MatrixRainView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +141,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91C74BFF27B45ACE009B5986 /* matrixCode.ttf in Resources */,
 				91C74BF827B458F5009B5986 /* Preview Assets.xcassets in Resources */,
 				91C74BF527B458F5009B5986 /* Assets.xcassets in Resources */,
 			);
@@ -139,6 +156,7 @@
 			files = (
 				91C74BF327B458F4009B5986 /* ContentView.swift in Sources */,
 				91C74BF127B458F4009B5986 /* MatrixRainApp.swift in Sources */,
+				91C74C0327B45B3E009B5986 /* MatrixRainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +290,7 @@
 				DEVELOPMENT_TEAM = 8AG33EWU86;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MatrixRain/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -301,6 +320,7 @@
 				DEVELOPMENT_TEAM = 8AG33EWU86;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MatrixRain/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
