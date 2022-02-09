@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
-        Text("Matrix Rain Prototype")
-            .padding()
+        ZStack {
+            Color.black
+            
+            MatrixRainView()
+        }
+        .ignoresSafeArea()
     }
 }
 
