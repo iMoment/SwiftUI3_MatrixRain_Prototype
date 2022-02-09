@@ -14,7 +14,10 @@ struct MatrixRainView: View {
             let size = proxy.size
             
             HStack(spacing: 15) {
-                MatrixRainCharacters(size: size)
+                // Repeat effect to occupy screen width
+                ForEach(1...Int(size.width / 25), id: \.self) { _ in
+                    MatrixRainCharacters(size: size)
+                }
             }
             .padding(.horizontal)
         }
@@ -29,11 +32,15 @@ struct MatrixRainCharacters: View {
     @State var randomCharacterIndex: Int = 0
     
     var body: some View {
+        
+        // Random Height
+        let randomHeight: CGFloat = .random(in: (size.height / 2)...size.height)
+        
         VStack {
             // MARK: Iterating String
             ForEach(0..<letters.count, id: \.self) { index in
                 // Retrieving Character at String
-                let character = Array(letters)[index]
+                let character = Array(letters)[getRandomIndex(index: index)]
                 
                 Text(String(character))
                     .font(.custom("matrixCode", size: 25))
@@ -56,20 +63,34 @@ struct MatrixRainCharacters: View {
                 )
                 .frame(height: size.height / 2)
             // Animating (to look like its coming from top)
-                .offset(y: startAnimation ? size.height : -(size.height / 2))
+                .offset(y: startAnimation ? size.height : -randomHeight)
         }
         .onAppear {
             // Move slowly down with linear animation
             // Endless loop without reversal
-            withAnimation(.linear(duration: 12).repeatForever(autoreverses: false)) {
+            // Random delay
+            withAnimation(.linear(duration: 12).delay(.random(in: 0...2)).repeatForever(autoreverses: false)) {
                 startAnimation = true
             }
+        }
+        // MARK: Timer
+        .onReceive(Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()) { _ in
+            randomCharacterIndex = Int.random(in: 0..<letters.count)
         }
     }
     
     // MARK: Change characters randomly using timer
     func getRandomIndex(index: Int) -> Int {
-        return 0
+        let max = letters.count - 1
+        
+        if (index + randomCharacterIndex) > max {
+            if (index - randomCharacterIndex) < 0 {
+                return index
+            }
+            return (index - randomCharacterIndex)
+        } else {
+            return (index + randomCharacterIndex)
+        }
     }
 }
 
